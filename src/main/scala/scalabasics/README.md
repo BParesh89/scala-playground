@@ -218,4 +218,24 @@ We can also iterate over tuple using method productIterator like below :
     4
     t
 
+### Option keyword
+When you are not sure whether a variable can be null or hold a value, we can declare it using **Option** class with keyword **Some**.
+
+    scala> val glazedDonutTaste: Option[String] = Some("Very Tasty")
+    glazedDonutTaste: Option[String] = Some(Very Tasty)
+
+We can also assign None to Option class variable. If we later want to assign it some value, we can define it like below:
+
+    scala> var glazedDonutTaste: Option[String] = None
+    glazedDonutTaste: Option[String] = None
+    
+    scala> glazedDonutTaste = Some("Tasty")
+    glazedDonutTaste: Option[String] = Some(Tasty)
+
+### Class and Type hierarchy in scala
+
+Any is the root type and it has two sub-classes namely AnyVal and AnyRef as per the above diagram.
+
+![](https://github.com/BParesh89/scala-playground/tree/master/src/resources/class-hierarchy-of-scala.png)
+
  
