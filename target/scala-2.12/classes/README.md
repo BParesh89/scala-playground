@@ -9,7 +9,7 @@ This repo is for explaining scala core concepts and data structures.
 For more read here -> https://www.signifytechnology.com/blog/2018/05/scala-and-functional-programming-why-by-mohammad-noor-abu-khleif. 
  Another good read -> https://www.edureka.co/blog/scala-functional-programming/
  
-4. 
+
 
 ### References
 1. [AllAboutScala](http://allaboutscala.com/)
