@@ -236,6 +236,6 @@ We can also assign None to Option class variable. If we later want to assign it 
 
 Any is the root type and it has two sub-classes namely AnyVal and AnyRef as per the above diagram.
 
-![](https://github.com/BParesh89/scala-playground/tree/master/src/resources/class-hierarchy-of-scala.png)
+![](https://github.com/BParesh89/scala-playground/tree/master/src/resources//class-hierarchy-of-scala.png)
 
  
