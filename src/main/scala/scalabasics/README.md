@@ -74,7 +74,7 @@ Example 2: Formatting numbers:
     scala> println(f"The number is $a%.2f")
     The number is 5.22
     
-#### If Else If
+### If Else If
 Below is one example:
 
     val a:Int = 100
@@ -84,3 +84,138 @@ Below is one example:
       println("Number between 5 and 10")
     }else
       println("Number greater than 10")
+      
+### For loop
+Below is example of using **to** and **until**:
+
+    println("Demo for loop using to")
+    for(a <- 1 to 5)
+      println(s"Number is $a")
+    println("Demo for lo0p using until")
+    for( b<- 1 until 5)
+      println(s"Number is $b")
+
+Here above, this 1 until 5 creates a scala range (1,2,3,4). Alphabetical range can also be created with below syntax:    
+`'a' to 'z'`
+
+
+With **to**, forloop prints upto number. With **until**, forloop prints upto 1 less than number limit. Output for above code is :
+
+    Demo for loop using to
+    Number is 1
+    Number is 2
+    Number is 3
+    Number is 4
+    Number is 5
+    Demo for lo0p using until
+    Number is 1
+    Number is 2
+    Number is 3
+    Number is 4
+    
+#### **yield** keyword
+As a quick summary of the yield keyword:
+
+1. For each iteration of your for loop, yield generates a value which is remembered by the for loop (behind the scenes, like a buffer).
+2. When your for loop finishes running, it returns a collection of all these yielded values.
+3. The type of the collection that is returned is the same type that you were iterating over.                             
+Example :   
+                                                                                                               
+        scala> val v = for (i <- 1 to 5) yield i
+        v: scala.collection.immutable.IndexedSeq[Int] = Vector(1, 2, 3, 4, 5)
+        
+        scala> for (j <- v) println(j)
+        1
+        2
+        3
+        4
+        5
+        
+For more details please check here, https://alvinalexander.com/scala/scala-for-loop-yield-examples-yield-tutorial/
+
+### While and Do-While
+Below is an example of while and do-while.    
+                                          
+    println("Demo of while loop")
+    var a = 10
+    while (a > 5) {
+      println(s"Number is $a")
+      a -= 1
+    }
+    println("Demo of do-while")
+    println(s"Present value of a is  $a")
+    do{
+      a +=1
+      println(s"Number is $a")
+    }while(a < 10)
+
+Output of above code is:
+
+    Demo of while loop
+    Number is 10
+    Number is 9
+    Number is 8
+    Number is 7
+    Number is 6
+    Demo of do-while
+    Present value of a is  5
+    Number is 6
+    Number is 7
+    Number is 8
+    Number is 9
+    Number is 10
+    
+### Pattern matching using **match**
+Example1.
+
+    println("Step 1: Pattern matching 101 - a very basic example")
+    val donutType = "Glazed Donut"
+    donutType match {
+      case "Glazed Donut" => println("Very tasty")
+      case "Plain Donut" => println("Tasty")
+    }
+
+Output of above is :
+
+    Step 1: Pattern matching 101 - a very basic example
+    Very tasty
+
+Example2.                                           
+
+    val tasteLevel4 = donutType match {
+      case donut if (donut.contains("Glazed") || 
+            donut.contains("Strawberry")) => "Very tasty"
+      case "Plain Donut"  => "Tasty"
+      case _  => "Tasty"
+    }
+    println(s"Taste level of $donutType = $tasteLevel4")
+    
+Output for above code is:
+
+`Taste level of Glazed Donut = Very tasty`
+
+### Tuple
+Scala tuple combines a fixed number of items together so that they can be passed around as a whole. Unlike an array or list, a tuple can hold objects with different types but they are also immutable.
+
+We can declare TupleN class variable to hold N values like below                        
+
+    scala> val t = Tuple2(1,2)
+    t: (Int, Int) = (1,2)
+We can declare tuple with element of different types      
+                              
+    scala> val t1 = Tuple2(3, 't')
+    t1: (Int, Char) = (3,t)
+   
+We can access individual element of above tuple with syntax : `t._1`
+
+We can also iterate over tuple using method productIterator like below :
+
+    scala> val t2 = (3,4,'t', true)
+    t2: (Int, Int, Char, Boolean) = (3,4,t,true)
+    
+    scala> t2.productIterator.foreach(i => println(i))
+    3
+    4
+    t
+
+ 
