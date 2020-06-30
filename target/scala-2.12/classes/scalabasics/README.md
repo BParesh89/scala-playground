@@ -193,3 +193,56 @@ Example2.
 Output for above code is:
 
 `Taste level of Glazed Donut = Very tasty`
+
+### Tuple
+Scala tuple combines a fixed number of items together so that they can be passed around as a whole. Unlike an array or list, a tuple can hold objects with different types but they are also immutable.
+
+We can declare TupleN class variable to hold N values like below                        
+
+    scala> val t = Tuple2(1,2)
+    t: (Int, Int) = (1,2)
+We can declare tuple with element of different types      
+                              
+    scala> val t1 = Tuple2(3, 't')
+    t1: (Int, Char) = (3,t)
+   
+We can access individual element of above tuple with syntax : `t._1`
+
+We can also iterate over tuple using method productIterator like below :
+
+    scala> val t2 = (3,4,'t', true)
+    t2: (Int, Int, Char, Boolean) = (3,4,t,true)
+    
+    scala> t2.productIterator.foreach(i => println(i))
+    3
+    4
+    t
+
+### Option keyword
+When you are not sure whether a variable can be null or hold a value, we can declare it using **Option** class with keyword **Some**.
+
+    scala> val glazedDonutTaste: Option[String] = Some("Very Tasty")
+    glazedDonutTaste: Option[String] = Some(Very Tasty)
+
+We can also assign None to Option class variable. If we later want to assign it some value, we can define it like below:
+
+    scala> var glazedDonutTaste: Option[String] = None
+    glazedDonutTaste: Option[String] = None
+    
+    scala> glazedDonutTaste = Some("Tasty")
+    glazedDonutTaste: Option[String] = Some(Tasty)
+
+### Class and Type hierarchy in scala
+
+Any is the root type and it has two sub-classes namely AnyVal and AnyRef as per the above diagram.
+
+![](https://github.com/BParesh89/scala-playground/tree/master/src/resources//class-hierarchy-of-scala.png)
+
+### Enumerations
+
+An enumerations serve the purpose of representing a group of named constants in a programming language. We dont have
+enum keyword in scala, instead we can create enumeration by extending Enumeration class in scala.
+
+
+
+ 
