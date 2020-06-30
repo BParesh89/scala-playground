@@ -11,5 +11,7 @@ Another good read -> https://www.edureka.co/blog/scala-functional-programming/
  
 4. [Scala basics](https://github.com/BParesh89/scala-playground/tree/master/src/main/scala/scalabasics)
 
+5. [Functions](https://github.com/BParesh89/scala-playground/tree/master/src/main/scala/functions)
+
 ### References
 1. [AllAboutScala](http://allaboutscala.com/)
