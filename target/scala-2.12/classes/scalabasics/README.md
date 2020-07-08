@@ -236,13 +236,27 @@ We can also assign None to Option class variable. If we later want to assign it 
 
 Any is the root type and it has two sub-classes namely AnyVal and AnyRef as per the above diagram.
 
-![](https://github.com/BParesh89/scala-playground/tree/master/src/resources//class-hierarchy-of-scala.png)
+![](https://github.com/BParesh89/scala-playground/blob/master/src/resources/class-hierarchy-of-scala.png)
+
 
 ### Enumerations
 
 An enumerations serve the purpose of representing a group of named constants in a programming language. We dont have
 enum keyword in scala, instead we can create enumeration by extending Enumeration class in scala.
 
+    scala> object Margin extends Enumeration {
+       type Margin = Value
+       val TOP, BOTTOM, LEFT, RIGHT = Value
+     }
+         |      |      | defined object Margin
+    
+    scala> Margin.values.foreach(println)
+    TOP
+    BOTTOM
+    LEFT
+    RIGHT
+    
+Enumerations are useful tool for creating groups of constants, such as days of the week, months of the year, and many other situations where you have a group of related, constant values.
 
 
  
