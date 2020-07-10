@@ -159,6 +159,102 @@ Output of above code is
     Step 4: How to import and use the implicit class AugmentedDonut from Step 3
     Vanilla donut uuid = Vanilla - 12345
     
+### Abstract Class
+
+Abstraction is one of the key concepts of object-oriented programming (OOP) languages. Its main goal is to handle 
+complexity by hiding unnecessary details from the user. That enables the user to implement more complex logic on top of
+the provided abstraction without understanding or even thinking about all the hidden complexity.
+
+An abstract class in scala is declared with **abstract** keyword. It can have both abstarct and non-abstract method.
+
+In fact, you only need to use an abstract class when:
+
+1. You want to create a base class that requires constructor arguments
+2. Your Scala code will be called from Java code
+
+Example :
+
+    abstract class Pet(name: String){
+        def speak(): Unit = println("Yo")   // concrete implementation
+        def comeToMaster(): Unit            // abstract method
+    }
+
+Given that abstract Pet class, you can define a Dog class like this:
+
+    class Dog(name: String) extends Pet(name) {
+        override def speak() = println("Woof")
+        def comeToMaster() = println("Here I come!")
+    }
+
+The REPL shows that this all works as advertised:
+
+    scala> val d = new Dog("Rover")
+    d: Dog = Dog@51f1fe1c
+    
+    scala> d.speak
+    Woof
+    
+    scala> d.comeToMaster
+    Here I come!
+    
+A case class can also extend an abstract class like below
+
+    case class Dog(name:String) extends Pet(name){
+        def comeToMaster() = println("Here I come!")
+    }
+
+To create and check case class object, we can use below code :
+
+    val dog: Pet = Dog("Dog")
+    Dog.comeToMaster()
+    
+### Traits
+
+Traits are fundamental unit of code reuse in scala. A trait encapsulates method and field definitions, 
+which can then be reused by mixing them into classes.
+
+A class can extend any number of traits.
+
+**Trait can not have an constructor argument.**
+
+For example:
+
+`trait abc(name:String); // will throw error traits or objects may not have parameters`
+
+A trait itself can extend multiple trait
+
+    trait a;
+    trait b;
+    trait c;
+    trait d extends a with b with c;
+
+A class extending a trait having both abstract and non-abstract methods
+
+    trait a {
+        def myfunc  //abstract method
+        def myfunc1() = println("Hello from non-abstract method of trait")  //non-abstract method
+    }
+    
+    class b extends a{
+        override def myfunc() = println("Hello from class extended my trait a")
+    }
+
+We can execute methods of trait and class like below :
+
+    scala> val sample:b = new b()
+    sample: b = b@a8dedda
+    
+    scala> sample.myfunc()
+    Hello from class extended my trait a
+    
+    scala> sample.myfunc1()
+    Hello from non-abstract method of trait
+
+
+
+
+
+
 
 
 

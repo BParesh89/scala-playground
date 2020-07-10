@@ -87,4 +87,121 @@ Singleton Pattern is a a fairly common design pattern when you need exactly one 
     } 
 
 
+### Case Class
+Case class are just like regular class which are immutable by default(good for spark!). Case classes are scala's way of allowing pattern
+matching on object without requiring a large amount of boilerplate code. It is also used to define schema of DataFrame 
+and Datasets in spark.
+
+We don't need to use the new keyword to create instance of case class as an apply method is created in the companion 
+object of the class.
+
+    scala> case class Person(name: String, relation: String)
+    defined class Person
+    
+    // "new" not needed before Person
+    scala> val christina = Person("Christina", "niece")
+    christina: Person = Person(Christina,niece)
+
+An unapply method is generated, which lets you use case classes in more ways in match expressions.
+
+Example :
+
+    trait Person {
+        def name: String
+    }
+    
+    case class Student(name: String, year: Int) extends Person
+    case class Teacher(name: String, specialty: String) extends Person
+    
+    def getPrintableString(p: Person): String = p match {
+        case Student(name, year) =>
+            s"$name is a student in Year $year."
+        case Teacher(name, whatTheyTeach) =>
+            s"$name teaches $whatTheyTeach."
+    }
+    
+    val s = Student("Al", 1)
+    val t = Teacher("Bob Donnan", "Mathematics")
+    
+We can test getPrintableString function like below:
+
+    scala> getPrintableString(s)
+    res0: String = Al is a student in Year 1.
+    
+    scala> getPrintableString(t)
+    res1: String = Bob Donnan teaches Mathematics.
+
+Of all, **the biggest advantage of case class is pattern matching.**
+
+### Implicit Class
+
+Use Implicit Class to add methods to an object without modifying the source code of the object - also commonly known as
+extension methods.
+
+Using Implicit Class to extend functionality of an object can be quite handy especially when you do have have access to
+modify the source object.
+
+    case class Donut(name: String, price: Double, productCode: Option[Long] = None)
+    
+    val vanillaDonut: Donut = Donut("Vanilla", 1.50)
+    
+    object DonutImplicits {
+     implicit class AugmentedDonut(donut: Donut) {
+      def uuid: String = s"${donut.name} - ${donut.productCode.getOrElse(12345)}"
+     }
+    }
+    
+    import DonutImplicits._
+    println(s"Vanilla donut uuid = ${vanillaDonut.uuid}")
+    
+Output of above code is 
+
+    Step 4: How to import and use the implicit class AugmentedDonut from Step 3
+    Vanilla donut uuid = Vanilla - 12345
+    
+### Abstract Class
+
+Abstraction is one of the key concepts of object-oriented programming (OOP) languages. Its main goal is to handle 
+complexity by hiding unnecessary details from the user. That enables the user to implement more complex logic on top of
+the provided abstraction without understanding or even thinking about all the hidden complexity.
+
+An abstract class in scala is declared with **abstract** keyword. It can have both abstarct and non-abstract method.
+
+In fact, you only need to use an abstract class when:
+
+1. You want to create a base class that requires constructor arguments
+2. Your Scala code will be called from Java code
+
+Example :
+
+    abstract class Pet(name: String){
+        def speak(): Unit = println("Yo")   // concrete implementation
+        def comeToMaster(): Unit            // abstract method
+    }
+
+Given that abstract Pet class, you can define a Dog class like this:
+
+    class Dog(name: String) extends Pet(name) {
+        override def speak() = println("Woof")
+        def comeToMaster() = println("Here I come!")
+    }
+
+The REPL shows that this all works as advertised:
+
+    scala> val d = new Dog("Rover")
+    d: Dog = Dog@51f1fe1c
+    
+    scala> d.speak
+    Woof
+    
+    scala> d.comeToMaster
+    Here I come!
+    
+
+
+    
+
+
+
+
 
