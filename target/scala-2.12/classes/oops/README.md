@@ -197,9 +197,64 @@ The REPL shows that this all works as advertised:
     scala> d.comeToMaster
     Here I come!
     
+A case class can also extend an abstract class like below
 
+    case class Dog(name:String) extends Pet(name){
+        def comeToMaster() = println("Here I come!")
+    }
 
+To create and check case class object, we can use below code :
+
+    val dog: Pet = Dog("Dog")
+    Dog.comeToMaster()
     
+### Traits
+
+Traits are fundamental unit of code reuse in scala. A trait encapsulates method and field definitions, 
+which can then be reused by mixing them into classes.
+
+A class can extend any number of traits.
+
+**Trait can not have an constructor argument.**
+
+For example:
+
+`trait abc(name:String); // will throw error traits or objects may not have parameters`
+
+A trait itself can extend multiple trait
+
+    trait a;
+    trait b;
+    trait c;
+    trait d extends a with b with c;
+
+A class extending a trait having both abstract and non-abstract methods
+
+    trait a {
+        def myfunc  //abstract method
+        def myfunc1() = println("Hello from non-abstract method of trait")  //non-abstract method
+    }
+    
+    class b extends a{
+        override def myfunc() = println("Hello from class extended my trait a")
+    }
+
+We can execute methods of trait and class like below :
+
+    scala> val sample:b = new b()
+    sample: b = b@a8dedda
+    
+    scala> sample.myfunc()
+    Hello from class extended my trait a
+    
+    scala> sample.myfunc1()
+    Hello from non-abstract method of trait
+
+
+
+
+
+
 
 
 

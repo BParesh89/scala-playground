@@ -13,5 +13,7 @@ Another good read -> https://www.edureka.co/blog/scala-functional-programming/
 
 5. [Functions](https://github.com/BParesh89/scala-playground/tree/master/src/main/scala/functions)
 
+6. [OOPS](https://github.com/BParesh89/scala-playground/tree/master/src/main/scala/oops)
+
 ### References
 1. [AllAboutScala](http://allaboutscala.com/)
