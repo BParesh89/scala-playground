@@ -15,5 +15,9 @@ Another good read -> https://www.edureka.co/blog/scala-functional-programming/
 
 6. [OOPS](https://github.com/BParesh89/scala-playground/tree/master/src/main/scala/oops)
 
+7. [Immutable Collection](https://github.com/BParesh89/scala-playground/tree/master/src/main/scala/immutablecollection)
+
+8. [Mutable Collection](https://github.com/BParesh89/scala-playground/tree/master/src/main/scala/mutablecollection)
+
 ### References
 1. [AllAboutScala](http://allaboutscala.com/)
