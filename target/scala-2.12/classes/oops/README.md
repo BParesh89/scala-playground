@@ -251,8 +251,10 @@ We can execute methods of trait and class like below :
     Hello from non-abstract method of trait
 
 
+### References
+1. [AllAboutScala](http://allaboutscala.com/)
 
-
+2. [Alvin Alexander](https://alvinalexander.com/)
 
 
 
