@@ -222,6 +222,12 @@ To find intersection of two sets, we use __&__ and to find difference of two set
 `val set7:Set[String] = set4 &~ set5`
 
 
+### References
+1. [AllAboutScala](http://allaboutscala.com/)
+
+2. [Alvin Alexander](https://alvinalexander.com/)
+
+3. [Geeksforgeeks](https://geeksforgeeks.org)
 
 
 

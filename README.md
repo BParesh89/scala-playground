@@ -19,5 +19,6 @@ Another good read -> https://www.edureka.co/blog/scala-functional-programming/
 
 8. [Mutable Collection](https://github.com/BParesh89/scala-playground/tree/master/src/main/scala/mutablecollection)
 
+9. [Collection Functions](https://github.com/BParesh89/scala-playground/tree/master/src/main/scala/collectionfunctions)
 ### References
 1. [AllAboutScala](http://allaboutscala.com/)
