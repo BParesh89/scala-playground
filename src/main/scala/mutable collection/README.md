@@ -50,4 +50,45 @@ We can check whether two arrays are equal or not using == operator.
     scala> arr1 == arr3
     res21: Boolean = false
     
+#### Array Buffer
+
+Array buffer is similar to array but its size is not fixed. We can declare an ArrayBuffer like below:
+
+`val arrb:ArrayBuffer[String] = ArrayBuffer("A","B")`
+
+We can add elements to it using += like below
+
+    scala> arrb += "C"
+    res22: arrb.type = ArrayBuffer(A, B, C)
+
+We can remove an element using -+ like below
+
+    scala> arrb -= "C"
+    res23: arrb.type = ArrayBuffer(A, B)
+    
+#### ListBuffer
+
+As per the Scala Documentation, a ListBuffer is resizable similar to an ArrayBuffer, except that it uses a Linked List
+as its internal data structure.
+
+We can define ListBuffer 
+
+`val listb:ListBuffer[String] = ListBuffer("A","B")`
+
+We can add elements using += and -= operators similar to ArrayBuffer.
+
+
+**Other data structure like Map, Queue & Set have mutable version also. We can use them similar to as in
+immutable version but without assigning to new instance.**
+
+### References
+1. [AllAboutScala](http://allaboutscala.com/)
+
+2. [Alvin Alexander](https://alvinalexander.com/)
+
+3. [Geeksforgeeks](https://geeksforgeeks.org)
+
+
+
+    
  
