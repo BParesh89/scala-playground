@@ -30,6 +30,8 @@ A Companion Object is defined using the object keyword and the name of the objec
 In addition, the companion object should define an apply() method which will be responsible for instantiating an 
 instance of the given class.
 
+A companion object is defined in the same source file in which the class is defined. A companion object is allowed to access both private methods and private fields of the class.
+
 Example
 
     class Person (n: String, a: Int){
