@@ -54,10 +54,10 @@ We can also declare list containing elements of multiple types using type `Any` 
     list9: List[Any] = List(A, B, 9, true)
     
 There are 3 important functions to work with list.
+
 1. head - it returns first element of list.
 2. tail - it returns all elements except first in list.
 3. isEmpty - which tells whether list is empty or not.
-
 
     scala> list9.head
     res1: Any = A
