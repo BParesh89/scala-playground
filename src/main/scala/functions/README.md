@@ -95,8 +95,9 @@ To get return value of function having Option type return, we can use **getOrEls
 `Today's coupon code = COUPON_1234`
 
 #### Example 6
-Functions with implicit parameters.                                                     
-Implicit parameters are parameters whose value are not passed along with function call. They are defined separately within the scop using **implicit** keyword.
+Functions with implicit parameters.
+
+Implicit parameters are the parameters that are passed to a function with **implicit** keyword in Scala, which means the values will be taken from the context in which they are called. In simpler terms, if no value or parameter is passed to a method or function, then the compiler will look for implicit value and pass it further as the parameter. 
 
     def totalCost(donutType: String, quantity: Int)(implicit discount: Double): Double = {
       println(s"Calculating the price for $quantity $donutType")
