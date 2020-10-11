@@ -86,7 +86,7 @@ We can declare a map using either of two notations below:
     
 To print value for any key we can use like `map1(1)` .
 
-**Map can not have duplicate values.**
+**Map can not have elements with duplicate keys.**
 
 To add two maps together, we can use ++ like below
 
