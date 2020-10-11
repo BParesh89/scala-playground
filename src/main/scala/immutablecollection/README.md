@@ -1,3 +1,14 @@
+## Collections in Scala
+
+Collections are the container of things that contains a random number of elements. All collection classes are found in the package scala.collection. Collections are of two types –
+
+1. Mutable Collections
+2. Immutable Collections
+
+__Mutable Collection__ – This type of collection is changed after it is created. All Mutable collection classes are found in the package scala.collection.mutable.
+
+__Immutable Collection__ – This type of collection will never change after it is created. All Immutable collection classes are found in the package scala.collection.immutable.
+
 ### Immutable collection
 
 #### List
