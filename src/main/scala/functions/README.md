@@ -231,6 +231,31 @@ If we want to pass any collection like List[String], Seq(String) or Array[String
     Donut report = Chocolate Donut - Plain Donut
     
 #### Example 11
+
+In Scala, An anonymous function is also known as a function literal. A function which does not contain a name is known as an anonymous function. An anonymous function provides a lightweight function definition. It is useful when we want to create an inline function.
+
+It is similar to lambda function in python
+
+    // Creating anonymous functions 
+    // with multiple parameters Assign 
+    // anonymous functions to variables  
+    var myfc1 = (str1:String, str2:String) => str1 + str2
+          
+    // An anonymous function is created  
+    // using _ wildcard instead of  
+    // variable name because str1 and 
+    // str2 variable appear only once  
+    var myfc2 = (_:String) + (_:String) 
+          
+    // Here, the variable invoke like a function call 
+    println(myfc1("Geeks", "12Geeks")) 
+    println(myfc2("Geeks", "forGeeks")) 
+
+Output is
+
+    Geeks12Geeks
+    GeeksforGeeks
+#### Example 12
 Higher order functions which take another function as parameter
 
     def totalCost(donutType: String)(quantity: Int)(discount: Double): Double = {
@@ -265,7 +290,7 @@ Using simple function with def
     }
     println(s"Total cost of 5 Glazed Donuts with discount function = ${totalCostWithDiscountFunctionParameter("Glazed Donut")(5)(applyDiscount(_))}")
 
-#### Example 12
+#### Example 13
 Define function with **val** keyword
 
     val f: (Any) => String = {
@@ -281,7 +306,7 @@ Output for calls
     f(1f)    // Other
     f("a")   // Other
     
-#### Example 13
+#### Example 14
 Nested Functions
 
     println("\nStep 3: How to define a Nested Function")
