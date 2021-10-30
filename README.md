@@ -19,8 +19,24 @@ This repo is for explaining scala core concepts and data structures.
       
        def func(i:Int, a:Int):Int = {return a+i}   // doesn't uses any external variable
    b. The function doesn't change its input values.
+      
+      Impure function
+      
+         def func(a:Int) = {a=a+1; return a} // changes value of input a
+         
+      Pure function
+      
+         def func(a:Int) = {return a + 10}  // doesn't change value of input
    
    c. There are no side effects, this means the function only do whatever it is intended for. It doesn't do anything extra.
+   
+      Impure function
+      
+         def func(a:Int) = {println("hello"); return a*a} // does extra thing - print hello
+         
+      Pure function
+      
+         def func(a:Int) = {return a*a} // nothing extra -simply returns square of number
    
    
 For more read here -> https://www.signifytechnology.com/blog/2018/05/scala-and-functional-programming-why-by-mohammad-noor-abu-khleif. 
