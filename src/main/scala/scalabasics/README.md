@@ -75,7 +75,9 @@ Example 2: Formatting numbers(f-Interpolation)
     The number is 5.22
     
 Example 3: Raw interpolation
+
 It doesn't do any escpaing of character i.e. it prints as it is.
+
 Wtih string interpolattion:
 
     scala> s"a\nb"
