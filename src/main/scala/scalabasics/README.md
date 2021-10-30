@@ -57,23 +57,37 @@ We can also declare a variable with default type initialization and assign it a 
 
 Above kind of initialization is ofcourse not possible with variables declared as **val**.
 
-### String Interpolation
+### Interpolation
 We use **$** symbol for string interpolation in Scala.
 
-Example 1: Formatting string
+Example 1: Formatting string(String Interpolation)
 
     scala> val name:String = "Paresh"
     name: String = Paresh
     scala> print(s"My name is $name")
     My name is Paresh
  
-Example 2: Formatting numbers:
+Example 2: Formatting numbers(f-Interpolation)
 
     scala> println(s"The number is $a")
     The number is 5.2224
     scala> println(f"The number is $a%.2f")
     The number is 5.22
     
+Example 3: Raw interpolation
+It doesn't do any escpaing of character i.e. it prints as it is.
+Wtih string interpolattion:
+
+    scala> s"a\nb"
+    res0: String =
+    a
+    b
+  
+With raw interpolation,
+
+    scala> raw"a\nb"
+    res1: String = a\nb
+
 ### If Else If
 Below is one example:
 
