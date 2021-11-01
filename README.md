@@ -37,6 +37,15 @@ This repo is for explaining scala core concepts and data structures.
       Pure function
       
          def func(a:Int) = {return a*a} // nothing extra -simply returns square of number
+         
+         
+   A simple way to test purity of function is if it is referentially transparent.
+   
+   A function is referentially transparent if replacing it with its output value doesn't impact the result.
+   
+   sqrt(4), sqrt(9) -- pure function
+   
+   dollarToRs(40) -- impure function as dollar to rupees conversion rate changes with time.
    
    
 For more read here -> https://www.signifytechnology.com/blog/2018/05/scala-and-functional-programming-why-by-mohammad-noor-abu-khleif. 
