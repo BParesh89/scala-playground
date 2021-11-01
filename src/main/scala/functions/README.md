@@ -256,7 +256,7 @@ Output is
     Geeks12Geeks
     GeeksforGeeks
 #### Example 12
-Higher order functions which take another function as parameter
+Higher order functions which take another function as parameter(input) or return another function as output
 
     def totalCost(donutType: String)(quantity: Int)(discount: Double): Double = {
       println(s"Calculating total cost for $quantity $donutType with ${discount * 100}% discount")
@@ -331,7 +331,30 @@ Output of above code is:
 
     Step 4: How to call a Nested Function
     Calling checkDonutAvailabilityWithNestedFunction with Vanilla Donut = true
- 
+    
+    
+#### Example 15 - First Class function
+
+First class functions are those functions which can be treated like values. It should have following 3 characterstics :
+
+a. We should be able to assign a function to a variable. 
+
+    var a:Int = 5
+    def doubler(i:Int):Int = { i *2 }
+    val a = doubler(_)  //assign function to variable a
+    a(2)  //4
+    
+b. We should be able to pass a fucntion as parameter to another function
+
+    def tripler(i:Int):Int = {i*3}
+    def func(i:Int, f:Int=>Int) = { f(i) }
+    func(5,tripler)
+    
+c. We should be able to return a function from another function
+
+    def func(x:Int) = {x:Int=> x*x}
+    
+    
 #### Function Currying
 
 Currying is a means of transforming a function that takes more than one argument into a chain of calls to functions, each of which takes a single argument.
