@@ -129,6 +129,46 @@ With **to**, forloop prints upto number. With **until**, forloop prints upto 1 l
     Number is 3
     Number is 4
     
+    
+#### For Loop Vs. Recursion Vs. Tail recursion
+
+for loop
+
+    def factorial(input:Int):Int = {
+        var result:Int = 1
+        for (i <- 1 to input)
+        {
+            result = result * i
+        }
+        result
+    }
+
+recursion
+
+    def factorial(input:Int):Int = {
+        if (input==1) 1
+        else input * factorial(input-1)
+    }
+
+Above can cause stackoverflow error in case of large value for input as every time it will need to remember the product of input and factorial(input-1).
+
+
+Tail recursion
+
+In the above example, we have used an auxiliary function “helper” and the make tail-recursive. We have made the helper function tail-recursive using a @tailrec annotation.
+
+    import scala.annotation.tailrec
+    def factorial(n:Int):Int = {
+        @tailrec
+        def helper(input:Int,result:Int):Int = {
+            if (input==1) result
+            else factorial(input-1,result*input)
+        }
+        helper(n,1)
+    }
+    
+Reference --> https://blog.knoldus.com/recursion-in-scala-in-a-simple-way/
+    
 #### **yield** keyword
 As a quick summary of the yield keyword:
 
