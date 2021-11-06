@@ -354,6 +354,26 @@ c. We should be able to return a function from another function
 
     def func(x:Int) = {x:Int=> x*x}
     
+
+#### Example 16 - Partially Applied function
+
+The Partially applied functions are the functions which are not applied on all the arguments defined by the stated function i.e, while invoking a function, we can supply some of the arguments and the left arguments are supplied when required. we call a function we can pass less arguments in it and when we pass less arguments it does not throw an exception. these arguments which are not passed to function we use hyphen( _ ) as placeholder.
+
+Basically,we fix value of some parameters in partially applied function, hence function is applied only on the left over parameters.
+
+Some important points:
+
+a .Partially applied functions are helpful in minimizing a function which accepts many arguments to a function that accepts only some arguments.
+b. It can replace any number of arguments defined by a function.
+c. It is easier for users to utilize this method.
+
+Example:
+
+    // create a function to return value of division of x by y
+    def divideFunc(x:Double, y:Double): = {x/y}
+
+    // create a function to return inverse of number i.e. value of division of 1 by number
+    val inverse = divideFunc(1,_:Double)
     
 #### Function Currying
 
