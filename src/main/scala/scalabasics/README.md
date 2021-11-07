@@ -315,4 +315,13 @@ enum keyword in scala, instead we can create enumeration by extending Enumeratio
 Enumerations are useful tool for creating groups of constants, such as days of the week, months of the year, and many other situations where you have a group of related, constant values.
 
 
+#### Access modifiers
+
+Scala has 3 access modifiers :
+
+a. Public - If we dont provide any access classifier with a variable or method, it is by default public. It can be accessed by instance of child class in case of inheritance. We can only use it inside defining class or through one of its objects.
+
+b. Private - If a variable or method is declared private , then it can not be accessed by instance of child class in case of inheritance.
+
+c. Protected - If a variable or method is declared private , then it can not be accessed by instance of child class in case of inheritance. Instead, it can be called inside the child class not by the child class object.
  
