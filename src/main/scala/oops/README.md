@@ -221,7 +221,7 @@ To create and check case class object, we can use below code :
 Traits are fundamental unit of code reuse in scala. A trait encapsulates method and field definitions, 
 which can then be reused by mixing them into classes.
 
-A class can extend any number of traits.
+A class can extend any number of traits. **Scala support multiple inheritance using traits.**
 
 **Trait can not have an constructor argument.**
 
