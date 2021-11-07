@@ -30,7 +30,13 @@ A Companion Object is defined using the object keyword and the name of the objec
 In addition, the companion object should define an apply() method which will be responsible for instantiating an 
 instance of the given class.
 
-A companion object is defined in the same source file in which the class is defined. A companion object is allowed to access both private methods and private fields of the class.
+A companion object is defined in the same source file in which the class is defined. A companion object & class are allowed to access both private methods and private fields of each other.
+
+In crux, we put instance independent information in companion object and instance dependent information in companion class. This is very similar to having static in java for instance independent information.
+
+The secret purpose of a companion object as a best practice is to store “static” fields and methods. Because class/object companions can access each other’s private fields and methods, there’s some extra convenience for us. Also, it helps us to save space where we define some fixed variable values in companion object. In instance of companion class, there will only single place where those varibles will be stored for all instances of companion class.
+
+Reference -> https://blog.rockthejvm.com/why-we-use-companions/
 
 Example
 
