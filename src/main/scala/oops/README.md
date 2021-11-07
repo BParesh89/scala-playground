@@ -173,7 +173,7 @@ Abstraction is one of the key concepts of object-oriented programming (OOP) lang
 complexity by hiding unnecessary details from the user. That enables the user to implement more complex logic on top of
 the provided abstraction without understanding or even thinking about all the hidden complexity.
 
-An abstract class in scala is declared with **abstract** keyword. It can have both abstarct and non-abstract method.
+An abstract class in scala is declared with **abstract** keyword. It can have both abstarct and non-abstract method. It means it can have both implemented and un-implemented methods. The whole purpose of defining an abstract class is to implement it later by inheriting it in child class. We can not create an instance of abstract class.
 
 In fact, you only need to use an abstract class when:
 
