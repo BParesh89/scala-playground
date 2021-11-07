@@ -141,6 +141,40 @@ We can test getPrintableString function like below:
 
 Of all, **the biggest advantage of case class is pattern matching.**
 
+Example with features :
+
+    object ScalaLearning9 {
+
+    case class Person (name: String, age: Int)
+
+    //1. class paremeters are automatically promoted to fields. 
+    val person1 = new Person("Sumit", 30)	//> person1: ScalaLearning9.Person Person(Sumit, 30)
+    println(person1.name)    //> Sumit
+
+    //2. case classes have sensible toString 
+
+    println(person1.toString) //> Person(Sumit, 30)
+    println(person1)   //> Person (Sumit, 30)
+
+    //3. equals and hashCode method implemented already 
+
+    val person2 = new Person("Sumit", 30)     //> person2: ScalaLearning9. Person Person(Sumit, 30)
+    println(person1 == person2)      //> true
+
+    //4. have companion objects already, we do not have to create it.
+
+    val person3= Person.apply("Sumit", 30)   //> person3 ScalaLearning9. Person Person (Sumit, 30)
+    println(person3)  //> Person(Sumit, 30)
+    val person4= Person("Sumit",30)    //> person4 ScalaLearning9. Person Person (Sumit, 30)
+    println(person4)    //> Person(Sumit,30)
+
+    //5. case classes have a handy copy method
+
+    val person5 = person2.copy(age=45)  //> person5 : ScalaLearning9. Person Person (Sumit, 45)
+    pritnln(person5.age)  //> 45
+    }
+
+
 ### Implicit Class
 
 Use Implicit Class to add methods to an object without modifying the source code of the object - also commonly known as
